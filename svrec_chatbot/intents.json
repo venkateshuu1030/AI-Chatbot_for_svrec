@@ -1,0 +1,49 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hello! Welcome to SVREC Chatbot.", "Hi! How can I help you about SVREC?"]
+    },
+    {
+      "tag": "admission",
+      "patterns": ["How to get admission", "Admission process", "How to join SVREC", "Apply for admission"],
+      "responses": ["Admissions are through EAMCET, ECET, and Management quota. Please contact the college office for details."]
+    },
+    {
+      "tag": "courses",
+      "patterns": ["What courses are offered", "Branches available", "Departments", "Available courses"],
+      "responses": ["SVREC offers CSE, AI, ECE, EEE, MECH, CIVIL, and MBA."]
+    },
+    {
+      "tag": "fees",
+      "patterns": ["Fee structure", "College fees", "Tuition fee", "How much is fee"],
+      "responses": ["The fee structure depends on the branch and admission category. Please contact the admin office."]
+    },
+    {
+      "tag": "placements",
+      "patterns": ["Placement details", "Companies visiting", "Jobs", "Placement record"],
+      "responses": ["SVREC has an active placement cell with companies like TCS, Wipro, Infosys, and more."]
+    },
+    {
+      "tag": "timings",
+      "patterns": ["College timings", "Working hours", "When college starts", "College time"],
+      "responses": ["College timings are from 9:30 AM to 4:30 PM, Monday to Saturday."]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["Contact number", "College phone", "Address", "How to contact"],
+      "responses": ["You can contact SVREC through the administration office or visit the official website."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "Exit", "See you"],
+      "responses": ["Thank you for contacting SVREC. Have a great day!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "Thanks a lot", "Thank u"],
+      "responses": ["You're welcome! Happy to help you."]
+    }
+  ]
+}

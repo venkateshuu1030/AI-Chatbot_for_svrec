@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVREC Chatbot</title>
+</head>
+
+<body>
+
+<h2>SVREC Chatbot</h2>
+
+<div id="chat-box" style="width:400px;height:300px;border:1px solid black;overflow:auto;padding:5px;">
+</div>
+
+<br>
+
+<input type="text" id="user-input" placeholder="Type message" style="width:300px;">
+
+<button onclick="send()">Send</button>
+
+
+<script>
+
+function send(){
+
+    let msg = document.getElementById("user-input").value;
+
+    if(msg == ""){
+        return;
+    }
+
+    let chat = document.getElementById("chat-box");
+
+    // Show user message
+    chat.innerHTML += "<b>You:</b> " + msg + "<br>";
+
+    document.getElementById("user-input").value = "";
+
+    fetch("/get", {
+        method: "POST",
+        headers:{
+            "Content-Type":"application/x-www-form-urlencoded"
+        },
+        body:"msg=" + encodeURIComponent(msg)
+    })
+
+    .then(res => res.json())
+
+    .then(data => {
+
+        chat.innerHTML += "<b>Bot:</b> " + data.reply + "<br><br>";
+
+        chat.scrollTop = chat.scrollHeight;
+    });
+
+}
+
+
+// Enter key support
+document.getElementById("user-input").addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+        send();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
